@@ -1,4 +1,6 @@
-# Breeze-Up is a weather app developed using HTML, Bootstrap, and JavaScript that fetches data from a weather API:
+# Breeze-Up is a weather app developed using HTML, Bootstrap, and JavaScript that fetches data from a weather API
+
+## Website Link : https://breezeup.netlify.app
 
 ## Features
 Displays current weather information for a selected location
