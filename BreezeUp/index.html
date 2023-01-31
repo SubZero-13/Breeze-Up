@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreezeUp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">BreezeUp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/SubZero-13/Breeze-Up" target="_blank">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Usage Guide</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input id="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <h1 class ="my-4 text-center text-bg-success p-3">Weather for <span id="cityName"></span></h1>
+    <div class="container">
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-success">
+                        <div class="card-header py-3 text-bg-warning border-success">
+                            <h4 class="my-0 fw-normal">Temperatures</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><span id="temp2"></span><small class="text-muted fw-light">&deg;<b>C</b></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Temperature is <span id="temp"></span></li>
+                                <li>Min Temperature is <span id="min_temp"></span></li>
+                                <li>Max Temperature is <span id="max_temp"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-success">
+                        <div class="card-header py-3 text-bg-warning border-success">
+                            <h4 class="my-0 fw-normal">Wind Speed</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><span id="wind_speed2"></span><small class="text-muted fw-light"><b>&nbsp;km/h</b></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Wind Speed is <span id="wind_speed"></span></li>
+                                <li>Feels Like is <span id="feels_like"></span></li>
+                                <li>Humidity is <span id="humidity"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-success">
+                        <div class="card-header py-3 text-bg-warning border-success">
+                            <h4 class="my-0 fw-normal">Cloud PCT</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><span id="cloud_pct"></span><small class="text-muted fw-light"><b>&nbsp;oktas</b></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Wind Degree is <span id="wind_degrees"></span></li>
+                                <li>Sunrise Time is <span id="sunrise"></span></li>
+                                <li>Sunset time is <span id="sunset"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="display-6 text-center mb-4 text-danger">Weather of Other Common Places</h2>
+
+            <div class="table-responsive">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th style="width: 34%;"></th>
+                            <th style="width: 34%;">Humidity</th>
+                            <th style="width: 22%;">Cloud Pct</th>
+                            <th style="width: 34%;">Feels Like</th>
+                            <th style="width: 34%;">Max Temp</th>
+                            <th style="width: 34%;">Min Tem</th>
+                            <th style="width: 34%;">Sunrise</th>
+                            <th style="width: 34%;">Sunset</th>
+                            <th style="width: 34%;">Temp</th>
+                            <th style="width: 34%;">Wind Degrees</th>
+                            <th style="width: 34%;">Wind Speed</th>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-start Delhi">Delhi</th>
+                            <td id="Delhi_humidity"></td>
+                            <td id="Delhi_cloud_pct"></td>
+                            <td id="Delhi_feels_like"></td>
+                            <td id="Delhi_max_temp"></td>
+                            <td id="Delhi_min_temp"></td>
+                            <td id="Delhi_sunrise"></td>
+                            <td id="Delhi_sunset"></td>
+                            <td id="Delhi_temp"></td>
+                            <td id="Delhi_wind_degrees"></td>
+                            <td id="Delhi_wind_speed"></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                            
+
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">New York</th>
+                            <td id="New York_humidity"></td>
+                            <td id="New York_cloud_pct"></td>
+                            <td id="New York_feels_like"></td>
+                            <td id="New York_max_temp"></td>
+                            <td id="New York_min_temp"></td>
+                            <td id="New York_sunrise"></td>
+                            <td id="New York_sunset"></td>
+                            <td id="New York_temp"></td>
+                            <td id="New York_wind_degrees"></td>
+                            <td id="New York_wind_speed"></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-start">Moscow</th>
+                            <td id="Moscow_humidity"></td>
+                            <td id="Moscow_cloud_pct"></td>
+                            <td id="Moscow_feels_like"></td>
+                            <td id="Moscow_max_temp"></td>
+                            <td id="Moscow_min_temp"></td>
+                            <td id="Moscow_sunrise"></td>
+                            <td id="Moscow_sunset"></td>
+                            <td id="Moscow_temp"></td>
+                            <td id="Moscow_wind_degrees"></td>
+                            <td id="Moscow_wind_speed"></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">Canberra</th>
+                            <td id="Canberra_humidity"></td>
+                            <td id="Canberra_cloud_pct"></td>
+                            <td id="Canberra_feels_like"></td>
+                            <td id="Canberra_max_temp"></td>
+                            <td id="Canberra_min_temp"></td>
+                            <td id="Canberra_sunrise"></td>
+                            <td id="Canberra_sunset"></td>
+                            <td id="Canberra_temp"></td>
+                            <td id="Canberra_wind_degrees"></td>
+                            <td id="Canberra_wind_speed"></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                            
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">Dubai</th>
+                            <td id="Dubai_humidity"></td>
+                            <td id="Dubai_cloud_pct"></td>
+                            <td id="Dubai_feels_like"></td>
+                            <td id="Dubai_max_temp"></td>
+                            <td id="Dubai_min_temp"></td>
+                            <td id="Dubai_sunrise"></td>
+                            <td id="Dubai_sunset"></td>
+                            <td id="Dubai_temp"></td>
+                            <td id="Dubai_wind_degrees"></td>
+                            <td id="Dubai_wind_speed"></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">London</th>
+                            <td id="London_humidity"></td>
+                            <td id="London_cloud_pct"></td>
+                            <td id="London_feels_like"></td>
+                            <td id="London_max_temp"></td>
+                            <td id="London_min_temp"></td>
+                            <td id="London_sunrise"></td>
+                            <td id="London_sunset"></td>
+                            <td id="London_temp"></td>
+                            <td id="London_wind_degrees"></td>
+                            <td id="London_wind_speed"></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                            <td><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#check"></use>
+                                </svg></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
